@@ -5,8 +5,7 @@ sum = 0
 with open("input.txt", "r") as file:
     lines = file.read().split("\n")
 
-def parse_input(lines):
-    alpha_num_dict = {
+alpha_num_dict = {
         "one": "1",
         "two": "2",
         "three": "3",
@@ -19,19 +18,13 @@ def parse_input(lines):
         "zero": "0",
     }
 
-    for i in range(len(lines)):
-        for key, value in alpha_num_dict.items():
-            lines[i] = lines[i].replace(key, value)
-    print(lines)       
-        
-        
-lines= parse_input(lines)
 
 for line in lines:
     i = 0
-    j = len(line) - 1
+    for key, value in alpha_num_dict.items():
+        line= line.replace(key, value)
     temp = ""
-
+    j = len(line) - 1
     while i < len(line) and j >= 0:
         if not line[i].isdigit():
             i += 1
