@@ -36,8 +36,9 @@ for line in lines:
 
     digit_index_map = dict(sorted(digit_index_map.items(), key=operator.itemgetter(1)))
     print(digit_index_map)
-  
-    temp += list(digit_index_map.keys())[0] + list(digit_index_map.keys())[-1]
+    first_digit = min(digit_index_map, key=lambda x: min(digit_index_map[x]))
+    last_digit = max(digit_index_map, key=lambda x: max(digit_index_map[x]))
+    temp= str(first_digit) + str(last_digit)
     sum += int(temp)
 
 print(sum)
