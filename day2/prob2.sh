@@ -24,7 +24,7 @@ for game in "${games[@]}"; do
     echo "Red: $red"
     echo "Green: $green"
     echo "Blue: $blue"
-    if [ "$red" -ge "$target_red" ] || [ "$green" -ge "$target_green" ] || [ "$blue" -ge "$target_blue" ]; then
+    if [ "$red" -gt "$target_red" ] || [ "$green" -gt "$target_green" ] || [ "$blue" -gt "$target_blue" ]; then
         game_id=$(echo "$game" | grep -oE 'Game [0-9]+' | grep -oE '[0-9]+')
         impossible_games+=("$game_id")
         echo "imPossible game: $game_id"
