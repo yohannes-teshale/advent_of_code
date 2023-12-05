@@ -26,7 +26,6 @@ check_symbols_adjacent() {
     local current_element=${arr[$index]}
     echo "current element is $current_element"
      if is_number "$current_element"; then
-         # Check adjacent elements for symbols
          for ((i=row-1; i<=row+1; i++)); do
              for ((j=col-1; j<=col+1; j++)); do
                  if [ $i -ge 0 ] && [ $i -lt ${#arr[@]} ] && [ $j -ge 0 ] && [ $j -lt ${#arr[@]} ]; then
